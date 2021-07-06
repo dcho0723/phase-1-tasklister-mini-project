@@ -1,24 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const taskList = new taskList();
 
-  let newTaskForm = document.querySelectory('#create-task-form')
-  let newTaskDescription = document.querySelector('#new-task-description')
-  // let newTaskPriority = document.querySelector('#new-task-priority')
+  let newTaskDescription = document.querySelector('#new-task-description');
+  let btn = document.createElement('button')
 
-  let newTask = document.querySelector('#tasks')
-
-  const renderApp = () => {
-    
-  }
 
 
   document.querySelector('#create-task-form').addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log(e)
+    let listItems = document.createElement('li')
+    let toDoList = document.querySelector('#list')
+    
 
-    // let createTask = {
+    btn.textContent = "remove"
+    listItems.textContent = newTaskDescription.value 
+     toDoList.append(listItems, btn)
 
-    // }
-
+     btn.addEventListener('click', () => {
+       listItems.remove()
+     })
+    
   })
-});
+
+})
